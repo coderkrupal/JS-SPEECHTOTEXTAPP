@@ -1,5 +1,6 @@
 const  startBtn = document.querySelector('#start_record');
 const stopBtn =  document.querySelector('#stop');
+const result_box = document.querySelector('.text_box')
 
 startBtn.addEventListener('click',startreconding);    
 stopBtn.addEventListener('click',stoprecording);
@@ -21,11 +22,36 @@ stopBtn.addEventListener('click',stoprecording);
        console.log("start recording")
      } 
 
+
+
+     let fullText = "";
+
+    
+     recon.onresult = (event) => {
+       const newText = event.results[event.results.length - 1][0].transcript;
+       
+      
+       fullText += newText + " ";
+       
+      
+       result_box.textContent = fullText.trim();
+     };
+   
+
+
+     recon.error = function(){
+        startBtn.disabled = false;
+        stopBtn.disabled = true;
+        console.log('Speech recognition ended');
+     }
+
+
     recon.onend = function(){
        startBtn.disabled = false;
        stopBtn.disabled = true;
        console.log("stop the recoding")
     }
+
 }
 
 else{
