@@ -16,7 +16,7 @@ A simple **Speech-to-Text** web application using JavaScript and the Web Speech 
 ## How to Use
 1. Clone this repository:
    ```sh
-   git clone https://github.com/Doshi-Krupal/speech-to-text-app.git
+   git clone https://github.com/coderkrupal/JS-SPEECHTOTEXTAPP
    ```
 2. Navigate to the project folder:
    ```sh
